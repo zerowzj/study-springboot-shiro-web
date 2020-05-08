@@ -1,0 +1,35 @@
+#
+server:
+  port: 7000
+#
+logging:
+  config: classpath:logback.xml
+#####################
+#（★）Spring
+#####################
+spring:
+  application:
+    name: study-springboot-mvc
+  main:
+    web-application-type: servlet
+    banner-mode: console
+  profiles:
+    active: @env@
+  #====================
+  #（▲）文件上传
+  #====================
+  servlet:
+    multipart:
+      enabled: true
+      #单文件大小
+      max-file-size: 100MB
+      #总文件大小
+      max-request-size: 10MB
+  #====================
+  #（▲）
+  #====================
+  thymeleaf:
+    prefix: classpath:/templates
+    suffix: html
+    cache: false
+    mode: HTML
