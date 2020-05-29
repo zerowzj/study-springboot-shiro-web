@@ -11,8 +11,8 @@ spring:
   application:
     name: study-springboot-mvc
   main:
+    banner-mode: 'off'
     web-application-type: servlet
-    banner-mode: console
   profiles:
     active: @env@
   #====================
