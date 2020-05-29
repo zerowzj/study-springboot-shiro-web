@@ -1,31 +1,43 @@
 package study.springboot.shiro.auth;
 
-import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import study.springboot.shiro.auth.realm.CustomRealm;
 
-import java.util.LinkedHashMap;
 import java.util.Map;
 
+@Configuration
 public class ShiroCfg {
 
-    @Bean
+    @Autowired
+    private CustomRealm customRealm;
+
+    @Bean("securityManager")
     public SecurityManager securityManager() {
         DefaultWebSecurityManager manager = new DefaultWebSecurityManager();
-//        manager.setRealm(myRealm());
+        manager.setRealm(customRealm);
+        // 自定义session管理 使用redis
+//        SessionConfig sessionConfig = new SessionConfig();
+//        sessionConfig.setSessionDAO(sessionDaoConfig);
+//        //sessionConfig.setSessionDAO(new SessionDaoConfig());
+//        manager.setSessionManager(sessionConfig);
+        // 自定义缓存实现 使用redis
+        //def.setCacheManager();
         return manager;
     }
 
-    @Bean
+    @Bean("shirFilter")
     public ShiroFilterFactoryBean shirFilter(SecurityManager securityManager) {
         ShiroFilterFactoryBean factoryBean = new ShiroFilterFactoryBean();
-        //没有登陆的json返回
-        factoryBean.setLoginUrl("/unlogin");
-        //没有权限的json返回
-        factoryBean.setUnauthorizedUrl("/no");
+        //未认证
+        factoryBean.setLoginUrl("/Unauthorized");
+        //未授权
+        factoryBean.setUnauthorizedUrl("/unauthorized");
 
         Map<String, String> filterChainMap = Maps.newLinkedHashMap();
         //配置不会被拦截的链接 顺序判断

@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class CustomRealms extends AuthorizingRealm {
+public class CustomRealm extends AuthorizingRealm {
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
