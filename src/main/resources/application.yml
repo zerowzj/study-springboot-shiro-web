@@ -4,15 +4,13 @@ server:
 #
 logging:
   config: classpath:logback.xml
-#####################
-#（★）Spring
-#####################
+#
 spring:
   application:
-    name: study-springboot-mvc
+    name: study-springboot-shiro
   main:
-    banner-mode: 'off'
     web-application-type: servlet
+    banner-mode: 'off'
   profiles:
     active: @env@
   #====================
