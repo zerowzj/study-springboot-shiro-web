@@ -1,4 +1,4 @@
-package study.springboot.shiro.controller;
+package study.springboot.shiro.web.controller;
 
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

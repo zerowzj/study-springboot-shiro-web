@@ -7,22 +7,12 @@ logging:
 #
 spring:
   application:
-    name: study-springboot-shiro
+    name: study-springboot-shiro-web
   main:
     web-application-type: servlet
     banner-mode: 'off'
   profiles:
     active: @env@
-  #====================
-  #（▲）文件上传
-  #====================
-  servlet:
-    multipart:
-      enabled: true
-      #单文件大小
-      max-file-size: 100MB
-      #总文件大小
-      max-request-size: 10MB
   #====================
   #（▲）
   #====================

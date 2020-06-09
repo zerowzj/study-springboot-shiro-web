@@ -1,4 +1,4 @@
-package study.springboot.shiro.auth;
+package study.springboot.shiro.web.auth;
 
 import com.google.common.collect.Maps;
 import org.apache.shiro.mgt.SecurityManager;
@@ -7,7 +7,7 @@ import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import study.springboot.shiro.auth.realm.CustomRealm;
+import study.springboot.shiro.web.auth.realm.CustomRealm;
 
 import java.util.Map;
 

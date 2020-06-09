@@ -1,4 +1,4 @@
-package study.springboot.shiro.support;
+package study.springboot.shiro.web.support;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

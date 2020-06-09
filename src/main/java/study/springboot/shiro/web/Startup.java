@@ -1,8 +1,8 @@
-package study.springboot.shiro;
+package study.springboot.shiro.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import study.springboot.shiro.support.SpringBootCfg;
+import study.springboot.shiro.web.support.SpringBootCfg;
 
 public class Startup {
 

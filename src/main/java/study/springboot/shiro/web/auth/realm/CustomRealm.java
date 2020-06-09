@@ -1,4 +1,4 @@
-package study.springboot.shiro.auth.realm;
+package study.springboot.shiro.web.auth.realm;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
